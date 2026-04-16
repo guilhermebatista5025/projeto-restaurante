@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../styles/cardapio.css">
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="../../styles/cart.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="src/images/Ícone moderno de hambúrguer e comida.ico"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Cardápio — food</title>
+  </head>
+
+  <body>
+    <!-- ===== HEADER (mesmo do index) ===== -->
+    <header>
+      <nav id="navbar">
+        <a href="index.html" style="text-decoration:none;">
+          <i class="fa-solid fa-burger" id="nav_logo"> food</i>
+        </a>
+
+        <ul id="nav_list">
+          <li class="nav-item"><a href="index.html#home">Início</a></li>
+          <li class="nav-item active"><a href="cardapio.html">Cardápio</a></li>
+          <li class="nav-item"><a href="index.html#testimonials">Avaliações</a></li>
+        </ul>
+
+        <button class="btn-default">Peça aqui</button>
+
+        <button id="mobile_btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div id="mobile_menu">
+        <ul id="mobile_nav_list">
+          <li class="nav-item"><a href="index.html#home">Início</a></li>
+          <li class="nav-item active"><a href="cardapio.html">Cardápio</a></li>
+          <li class="nav-item"><a href="index.html#testimonials">Avaliações</a></li>
+        </ul>
+        <button class="btn-default">Peça aqui</button>
+      </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+      <section id="cardapio-page">
+
+        <!-- Header -->
+        <div class="cardapio-header">
+          <h2 class="section-title">Cardápio</h2>
+          <h3 class="section-subtitle">Tudo que temos para você</h3>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-sticky-wrap">
+          <div id="filter-bar">
+            <button class="filter-btn active" data-category="todos">
+              <i class="fa-solid fa-border-all"></i> Todos
+            </button>
+            <button class="filter-btn" data-category="pratos">
+              <i class="fa-solid fa-utensils"></i> Pratos Principais
+            </button>
+            <button class="filter-btn" data-category="lanche">
+              <i class="fa-solid fa-burger"></i> Lanches
+            </button>
+            <button class="filter-btn" data-category="sobremesa">
+              <i class="fa-solid fa-ice-cream"></i> Sobremesas
+            </button>
+            <button class="filter-btn" data-category="bebida">
+              <i class="fa-solid fa-wine-glass"></i> Bebidas
+            </button>
+          </div>
+
+          <p id="item-count"></p>
+        </div>
+
+        <!-- Menu Grid -->
+        <div id="menu-grid">
+
+          <!-- ===== PRATOS PRINCIPAIS ===== -->
+          <div class="category-section" id="sec-pratos" data-cat="pratos">
+            <div class="category-label"><i class="fa-solid fa-utensils"></i> Pratos Principais</div>
+            <div class="dishes-row">
+
+              <div class="dish" data-category="pratos">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Prato</span>
+                <img src="../images/cardapios/dish/dish2.png" class="dish-image" alt="Frango Grelhado" />
+                <h3 class="dish-title">Frango Grelhado</h3>
+                <span class="dish-description">Frango marinado grelhado com legumes salteados e arroz integral.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <span>(312)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$38,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="pratos">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Prato</span>
+                <img src="../images/cardapios/dish/dish3.png" class="dish-image" alt="Filé à Parmegiana" />
+                <h3 class="dish-title">Filé à Parmegiana</h3>
+                <span class="dish-description">Filé mignon empanado com molho de tomate e queijo gratinado.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(489)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$52,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="pratos">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Prato</span>
+                <img src="../images/cardapios/dish/dish4.png" class="dish-image" alt="Salmão ao Molho Cítrico" />
+                <h3 class="dish-title">Salmão ao Molho Cítrico</h3>
+                <span class="dish-description">Posta de salmão fresco com molho de limão siciliano e alcaparras.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(278)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$65,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="pratos">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Prato</span>
+                <img src="../images/cardapios/dish/dish6.png" class="dish-image" alt="Picanha na Brasa" />
+                <h3 class="dish-title">Picanha na Brasa</h3>
+                <span class="dish-description">Picanha premium selada na brasa com farofa especial e vinagrete.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(601)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$78,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== LANCHES ===== -->
+          <div class="category-section" id="sec-lanche" data-cat="lanche">
+            <div class="category-label"><i class="fa-solid fa-burger"></i> Lanches</div>
+            <div class="dishes-row">
+
+              <div class="dish" data-category="lanche">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Lanche</span>
+                <img src="../images/cardapios/lanches/lanche1.png" class="dish-image" alt="Hambúrguer Clássico" />
+                <h3 class="dish-title">Hambúrguer Clássico</h3>
+                <span class="dish-description">Blend artesanal 180g, queijo cheddar, alface, tomate e molho especial.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(500+)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$28,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="lanche">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Lanche</span>
+                <img src="../images/cardapios/lanches/lanche2.jpg" class="dish-image" alt="Hot Dog Especial" />
+                <h3 class="dish-title">Hot Dog Especial</h3>
+                <span class="dish-description">Salsicha artesanal com molho de queijo, purê de batata e milho crocante.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <span>(320)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$22,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="lanche">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Lanche</span>
+                <img src="../images/cardapios/lanches/lanche4.jpg" class="dish-image" alt="Combo Supremo" />
+                <h3 class="dish-title">Combo Supremo</h3>
+                <span class="dish-description">Hambúrguer duplo + batata rústica + refrigerante à sua escolha.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(415)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$42,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="lanche">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Lanche</span>
+                <img src="../images/cardapios/lanches/lanche5.jpg" class="dish-image" alt="Batata Frita Especial" />
+                <h3 class="dish-title">Batata Frita Especial</h3>
+                <span class="dish-description">Batatas rústicas crocantes com tempero de ervas e molho aioli.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(500+)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$18,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="lanche">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Lanche</span>
+                <img src="../images/cardapios/lanches/lanche6.jpg" class="dish-image" alt="Wrap Frango Crispy" />
+                <h3 class="dish-title">Wrap Frango Crispy</h3>
+                <span class="dish-description">Wrap integral com frango empanado crocante, cream cheese e rúcula.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <span>(194)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$26,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="lanche">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Lanche</span>
+                <img src="../images/cardapios/lanches/lanche7.jpg" class="dish-image" alt="Misto Quente Gourmet" />
+                <h3 class="dish-title">Misto Quente Gourmet</h3>
+                <span class="dish-description">Pão de fermentação natural, presunto especial, queijo gruyère e mostarda Dijon.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(237)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$24,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== SOBREMESAS ===== -->
+          <div class="category-section" id="sec-sobremesa" data-cat="sobremesa">
+            <div class="category-label"><i class="fa-solid fa-ice-cream"></i> Sobremesas</div>
+            <div class="dishes-row">
+
+              <div class="dish" data-category="sobremesa">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Sobremesa</span>
+                <img src="src/images/dish4.png" class="dish-image" alt="Brownie com Sorvete" />
+                <h3 class="dish-title">Brownie com Sorvete</h3>
+                <span class="dish-description">Brownie de chocolate belga quente com bola de sorvete de creme e calda.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(390)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$19,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="sobremesa">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Sobremesa</span>
+                <img src="src/images/dish.png" class="dish-image" alt="Pudim de Leite" />
+                <h3 class="dish-title">Pudim de Leite</h3>
+                <span class="dish-description">Pudim cremoso caseiro com calda de caramelo dourado.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <span>(277)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$14,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="sobremesa">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Sobremesa</span>
+                <img src="src/images/dish2.png" class="dish-image" alt="Petit Gâteau" />
+                <h3 class="dish-title">Petit Gâteau</h3>
+                <span class="dish-description">Bolinho de chocolate com interior derretido, sorvete de baunilha e frutas vermelhas.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(451)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$22,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="sobremesa">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Sobremesa</span>
+                <img src="src/images/dish3.png" class="dish-image" alt="Açaí na Tigela" />
+                <h3 class="dish-title">Açaí na Tigela</h3>
+                <span class="dish-description">Açaí batido cremoso com granola, banana, mel e frutas da estação.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(388)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$16,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== BEBIDAS ===== -->
+          <div class="category-section" id="sec-bebida" data-cat="bebida">
+            <div class="category-label"><i class="fa-solid fa-wine-glass"></i> Bebidas</div>
+            <div class="dishes-row">
+
+              <div class="dish" data-category="bebida">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Bebida</span>
+                <img src="src/images/dish.png" class="dish-image" alt="Suco de Laranja Natural" />
+                <h3 class="dish-title">Suco Natural 500ml</h3>
+                <span class="dish-description">Sucos frescos: laranja, abacaxi com hortelã, melancia ou maracujá.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(290)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$10,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="bebida">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Bebida</span>
+                <img src="src/images/dish2.png" class="dish-image" alt="Milk Shake" />
+                <h3 class="dish-title">Milk Shake 400ml</h3>
+                <span class="dish-description">Milk shake cremoso nos sabores chocolate, morango, baunilha ou Oreo.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <span>(365)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$18,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="bebida">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Bebida</span>
+                <img src="src/images/dish3.png" class="dish-image" alt="Refrigerante" />
+                <h3 class="dish-title">Refrigerante Lata</h3>
+                <span class="dish-description">Coca-Cola, Guaraná, Sprite, Fanta Laranja ou Pepsi gelados.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(500+)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$6,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="bebida">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Bebida</span>
+                <img src="src/images/dish4.png" class="dish-image" alt="Água Mineral" />
+                <h3 class="dish-title">Água Mineral</h3>
+                <span class="dish-description">Água mineral gelada com ou sem gás, garrafa 500ml.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(500+)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$4,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="bebida">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Bebida</span>
+                <img src="src/images/dish.png" class="dish-image" alt="Chá Gelado" />
+                <h3 class="dish-title">Chá Gelado 400ml</h3>
+                <span class="dish-description">Chá gelado artesanal de limão com gengibre, pêssego ou hibisco.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <span>(143)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$12,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+              <div class="dish" data-category="bebida">
+                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+                <span class="dish-category-tag">Bebida</span>
+                <img src="src/images/dish2.png" class="dish-image" alt="Vitamina de Frutas" />
+                <h3 class="dish-title">Vitamina de Frutas</h3>
+                <span class="dish-description">Vitamina cremosa de banana com morango, aveia e leite integral.</span>
+                <div class="dish-rate">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>(211)</span>
+                </div>
+                <div class="dish-price">
+                  <h4>R$14,00</h4>
+                  <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- EMPTY STATE -->
+          <div id="empty-state">
+            <i class="fa-solid fa-bowl-food"></i>
+            <p>Nenhum item encontrado</p>
+            <span>Tente selecionar outra categoria</span>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <img src="src/images/wave.svg" alt="" />
+      <div id="footer_items">
+        <span id="copyright">&copy; 2026 food</span>
+        <div class="social-media-buttons">
+          <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="../script.js"></script>
+    <script src="../cardapio.js"></script>
+    <script src="../cart.js"></script>
+
+  </body>
+</html>
